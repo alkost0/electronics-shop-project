@@ -16,11 +16,11 @@ class Item:
         """
         Рассчитывает общую стоимость конкретного товара в магазине.
         """
-        return self.price * self.quantity
+        return float(self.price * self.quantity)
 
 
     def apply_discount(self) -> None:
         """
         Применяет установленную скидку для конкретного товара.
         """
-        return self.price * Item.pay_rate
+        return float(self.price * self.pay_rate)
