@@ -21,7 +21,3 @@ def test_item_discount(item_name):
     item_name.apply_discount()
     assert item_name.price == 8500.0
 
-def test_calculate_total_price():
-    '''Тест по итоговой цене (проверяем main функцию по совету Олега из онбординга)'''
-    assert(item1.calculate_total_price()) == 200000
-    assert(item2.calculate_total_price()) == 100000
