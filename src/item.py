@@ -23,4 +23,4 @@ class Item:
         """
         Применяет установленную скидку для конкретного товара.
         """
-        return float(self.price * self.pay_rate)
+        self.price =  float(self.price * self.pay_rate)

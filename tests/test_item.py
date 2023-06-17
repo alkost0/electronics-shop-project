@@ -13,7 +13,7 @@ def test_item_init(item_name):
 
 def test_item_calculation(item_name):
     '''Тест по итоговой цене (проверяем вторую функцию)'''
-    assert item_name.calculate_total_price() == 200000.0
+    assert item_name.calculate_total_price() == 100000.0
 
 def test_item_discount(item_name):
     '''Тест по скидке (проверяем третьюю функцию)'''
