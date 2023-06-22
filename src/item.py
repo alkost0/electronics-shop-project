@@ -1,3 +1,5 @@
+import csv
+
 class Item:
     """
     Класс для представления товара в магазине.
@@ -24,3 +26,27 @@ class Item:
         Применяет установленную скидку для конкретного товара.
         """
         self.price =  float(self.price * self.pay_rate)
+
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, value):
+        if len(value) < 11:
+            self.__name = value
+        else:
+            self.__name = value[:10]
+
+    @classmethod
+    def instantiate_from_csv(cls):
+        Item.all = []
+        with open("../src/items.csv") as csvfile:
+            datas = csv.DictReader(csvfile)
+            for data in datas:
+                cls(data['name'], data['price'], data['quantity'])
+
+    @staticmethod
+    def string_to_number(line):
+        number = int(float(line))
+        return number

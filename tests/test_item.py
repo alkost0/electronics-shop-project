@@ -21,3 +21,9 @@ def test_item_discount(item_name):
     item_name.apply_discount()
     assert item_name.price == 8500.0
 
+def test_get_name(item_name):
+    assert item_name.name == "Ноутбук"
+
+def test_set_name(item_name):
+    item_name.name = "НоутбукДеллВостро"
+    assert item_name.name == "НоутбукДел"
