@@ -27,3 +27,20 @@ def test_get_name(item_name):
 def test_set_name(item_name):
     item_name.name = "НоутбукДеллВостро"
     assert item_name.name == "НоутбукДел"
+
+def test_instantiate_from_csv():
+    Item.instantiate_from_csv()
+    item_name1 = Item.all[0]
+    assert item_name1.name == "Смартфон"
+    item_name2 = Item.all[1]
+    assert item_name2.name == "Ноутбук"
+
+def test_string_to_number():
+    Item.instantiate_from_csv()
+    assert Item.string_to_number("2.2") == 2
+
+def test_str(item_name):
+    assert str(item_name) == "Ноутбук"
+
+def test_repr(item_name):
+    assert repr(item_name) == "Item('Ноутбук', 50000, 2)"
