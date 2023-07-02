@@ -1,5 +1,6 @@
 import pytest
 from src.item import Item
+from src.phone import Phone
 
 @pytest.fixture()
 def item_name():
@@ -40,7 +41,13 @@ def test_string_to_number():
     assert Item.string_to_number("2.2") == 2
 
 def test_str(item_name):
-    assert str(item_name) == "Ноутбук"
+    assert str(item_name) == "Смартфон"
 
 def test_repr(item_name):
-    assert repr(item_name) == "Item('Ноутбук', 50000, 2)"
+    assert repr(item_name) == "Item('HuaweiP100', 10000, 10)"
+
+def test_add(item_name):
+    Phone_2 = Phone("Samsung_Dual_Sim", 30000, 5, 2)
+    assert item_name + phone2 == 25
+    assert item_name + item_name == 20
+    assert Phone_2 + 5 == Exception
