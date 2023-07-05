@@ -1,6 +1,7 @@
 import csv
+from abc import ABC
 
-class Item:
+class Item(ABC):
     """
     Класс для представления товара в магазине.
     """
@@ -10,7 +11,8 @@ class Item:
         """
         Создание экземпляра класса item.
         """
-        self.name = name         #Название товара.
+        super().__init__()
+        self.__name = name         #Название товара.
         self.price = price       #Цена за единицу товара.
         self.quantity = quantity #Количество товара в магазине.
         self.all.append(self)
