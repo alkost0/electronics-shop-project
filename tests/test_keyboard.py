@@ -3,14 +3,14 @@ from src.keyboard import Keyboard
 
 @pytest.fixture()
 def keyboard_name():
-    return Keyboard("Chicony 100500", 5000, 20)
+    return Keyboard("Dark Project KD87A", 9600, 5)
 
 def test_str(keyboard_name):
-    assert str(keyboard_name) == "Chicony 100500"
+    assert str(keyboard_name) == "Dark Project KD87A"
     assert str(keyboard_name.language) == "EN"
 
 def test_repr(keyboard_name):
-    assert repr(keyboard_name) == "Keyboard('Chicony 100500', 5000, 20)"
+    assert repr(keyboard_name) == "Keyboard('Dark Project KD87A', 9600, 5)"
 
 def test_change_lang(keyboard_name):
     keyboard_name.change_lang()
